@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --font_size-big: 18px;
+    font-family: Helvetica Neue, Helvetica, Barlow, Open Sans, Lucida Grande, Arial, Sans-serif;
+}
+
+.app {
+    height: 100%;
+    width: 100%;
+}
+
+.header,
+.footer {
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: #141414;
+    height: 68px;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 40px;
+}
+
+.header__links {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+
+.header__input {
+    margin: 20px 0% 20px auto;
+    width: calc((100% - 350px) / 3);
+    ;
+}
+
+.logo {
+    color: red;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.footer {
+    background: #111111;
+    padding-top: 48px;
+}
+
+.footer__top {
+    margin: auto;
+    padding: 0 55px 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.separator {
+    border-color: #666666;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column__header {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.column__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.column__link:hover {
+    text-decoration: underline;
+}
+
+.footer__bottom {
+    padding: 20px;
+}
+
+.footer__bottom__info {
+    color: #666666;
+    font-size: 12px;
+    text-align: center;
+}
+
+.container {
+    margin: 40px auto;
+    width: 800px;
+}
+
+.container_ul {
+    list-style: none;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container_li {
+   /* display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;*/
+    padding: 15px;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.container_li:hover .li__mainText {
+    text-decoration: underline;
+}
+
+.artistsContainer__artist {
+   /* background-image: url('lady-gaga.jpg');*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.albumsContainer__album {
+   /* background-image: url('the-fame.jpg');*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.li__mainText {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.li__mainText:hover {
+    text-decoration: underline;
+}
+
+.li__subtext {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 8px;
+}
+
+.album__artistName:hover {
+    text-decoration: underline;
+}
+
+.container_li:has(.album__artistName:hover) .album__name {
+    text-decoration: none;
+}
+
+.moreLink {
+    width: 100%;
+    color: #005399;
+    font-size: 13px;
+    text-wrap: nowrap;
+    text-decoration: none;
+    display: flex;
+    justify-content: end;
+}
+
+.moreLink:hover {
+    text-decoration: underline;
+}
+
+.mainContainer {
+    padding: 35px 30px;
+}
+
+.header__separator {
+    border-color: #D92323;
+    width: 100px;
+    margin: auto;
+}
+
+.main__header {
+    font-size: 48px;
+    color: #222222;
+    text-align: center;
+    margin-top: 48px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.track__image {
+    width: 40px;
+    aspect-ratio: 1;
+}
+
+.cell__image {
+    width: 60px;
+}
+
+.track__name {
+    font-weight: 700;
+    text-align: start;
+}
+
+.track__name:hover {
+    text-decoration: underline;
+}
+
+.track__artistName {
+    text-align: center ;
+}
+
+.track__artistName:hover {
+    text-decoration: underline;
+}
+
+.track__listeners {
+    text-align: right;
+}
+.track__link {
+    text-decoration: none;
+    color: #222222;
+}
+
+.artist__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.inputContainer {
+    position: relative;
+    width: 800px;
+    margin: 20px auto;
+}
+
+.searchInput {
+    width: 100%;
+    height: 40px;
+    background-image: url('searchicon.png');
+    background-position: 6px 6px;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding: 6px 40px 6px 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #555;
+}
+
+.resetSearchButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('close-button.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.textSearch {
+    width: 800px;
+    margin: 30px auto 0px;
+}
+
+.tracksTable {
+    margin: 20px auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tracksTable__track td {
+    font-size: 16px;
+    color: #222222;
+    padding: 10px;
+    border-bottom: 1px solid #777777;
+}
+
+.tracksTable__track:last-child td {
+    border-bottom: none;
+}
+
+.searchButton {
+    width: 25px;
+    height: 25px;
+    background-image: url('searchicon-white.png');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+.artist__url {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.message {
+    visibility: hidden;
+}
+
+.message__visible {
+    visibility: visible;
+}
