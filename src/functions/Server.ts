@@ -90,7 +90,7 @@ export async function getTopTracks() {
                 trackImage = imgObj['#text'];
             }
 
-            const trackInfoResponse = await fetch(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${apiKey}&artist=${track.artist.name}&track=${track.name}&format=json`);
+            const trackInfoResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${apiKey}&artist=${track.artist.name}&track=${track.name}&format=json`);
 
             if (trackInfoResponse.status === 200) {
                 const trackInfoData = await trackInfoResponse.json();
@@ -129,7 +129,7 @@ export async function getTopTracks() {
 export async function searchArtistsWithAlbumImages(searchStr: string) {
     try {
         if (searchStr.trim() != '') {
-            const results = await fetch(`http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${searchStr}&api_key=${apiKey}&format=json&limit=8`);
+            const results = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${searchStr}&api_key=${apiKey}&format=json&limit=8`);
 
             if (results.status != 200) {
                 return null;
@@ -183,7 +183,7 @@ export async function searchArtistsWithAlbumImages(searchStr: string) {
 export async function searchAlbumsWithImages(searchStr: string) {
     try {
         if (searchStr.trim() != '') {
-            const results = await fetch(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${searchStr}&api_key=${apiKey}&format=json&limit=8`);
+            const results = await fetch(`https://ws.audioscrobbler.com/2.0/?method=album.search&album=${searchStr}&api_key=${apiKey}&format=json&limit=8`);
 
             if (results.status != 200) {
                 return null;
@@ -226,7 +226,7 @@ export async function searchAlbumsWithImages(searchStr: string) {
 export async function searchTracksWithAlbumImages(searchStr: string) {
     try {
         if (searchStr.trim() != '') {
-            const results = await fetch(`http://ws.audioscrobbler.com/2.0/?method=track.search&track=${searchStr}&api_key=${apiKey}&format=json&limit=10`);
+            const results = await fetch(`https://ws.audioscrobbler.com/2.0/?method=track.search&track=${searchStr}&api_key=${apiKey}&format=json&limit=10`);
 
             if (results.status != 200) {
                 return null;
@@ -236,7 +236,7 @@ export async function searchTracksWithAlbumImages(searchStr: string) {
             const tracks = resultsData.results.trackmatches.track;
 
             const tracksWithAlbumImages: ITrack[] = await Promise.all(tracks.map(async (track: any) => {
-                const trackInfoResponse = await fetch(`http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${apiKey}&artist=${track.artist}&track=${track.name}&format=json`);
+                const trackInfoResponse = await fetch(`https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=${apiKey}&artist=${track.artist}&track=${track.name}&format=json`);
 
                 let trackImage = '/white-star.webp';
                 const imgObj = track.image.find((img: any) => img.size === 'extralarge' && img['#text']);
