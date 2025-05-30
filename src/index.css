@@ -1,0 +1,477 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --font_size-big: 18px;
+    font-family: Helvetica Neue, Helvetica, Barlow, Open Sans, Lucida Grande, Arial, Sans-serif;
+}
+
+.app {
+    height: 100%;
+    width: 100%;
+}
+
+.header,
+.footer {
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background: #141414;
+    height: 68px;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 40px;
+}
+
+.header__links {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+
+.header__input {
+    margin: 20px 0% 20px auto;
+    width: calc((100% - 350px) / 3);
+    ;
+}
+
+.logo {
+    color: red;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.footer {
+    background: #111111;
+    padding-top: 48px;
+}
+
+.footer__top {
+    margin: auto;
+    padding: 0 55px 40px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.separator {
+    border-color: #666666;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column__header {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.column__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.footer__bottom {
+    padding: 20px;
+}
+
+.footer__bottom__info {
+    color: #666666;
+    font-size: 12px;
+    text-align: center;
+}
+
+.artistsContainer {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.artistsContainer__artist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+    margin: 24px 0;
+    max-width: calc(100% / 6);
+    box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+    .artistsContainer__artist {
+        max-width: calc((100% / 4) - 20px);
+    }
+}
+
+.artist__url {
+    text-decoration: none;
+    color: #000;
+}
+
+.search__artistsContainer__artist,
+.search__albumsContainer__album {
+    /* background-image: url('lady-gaga.jpg'); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.search__artist__url {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.artist__image {
+    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.artist__name {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.artist__tags {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #999999;
+}
+
+.mainСontainer {
+    padding: 35px 30px;
+}
+
+.mainСontainer__header {
+    padding: 0 0 18px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.header__separator {
+    border-color: #D92323;
+    width: 100px;
+    margin: auto;
+}
+
+.main__header {
+    font-size: 48px;
+    color: #222222;
+    text-align: center;
+    margin-top: 48px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.tracksContainer {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px 50px;
+    justify-content: space-between;
+    height: 614px;
+}
+
+.tracksContainer__track {
+    width: calc(100% / 3);
+    height: 70px;
+    display: flex;
+    /*justify-content: center;*/
+    flex-direction: row;
+    margin-top: 24px;
+}
+
+.track__image {
+    width: 70px;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.track__info {
+    margin: auto 0;
+    padding-left: 15px;
+}
+
+.track__name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222222;
+    padding: 2px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.track__artistName {
+    font-size: 14px;
+    color: #222222;
+    padding: 2px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.track__tags {
+    font-size: 12px;
+    color: #999999;
+    padding: 2px;
+}
+
+.tagsGrid {
+    margin: 24px auto 0;
+    padding: 0 30px;
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.tag__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1cc9e8;
+    color: white;
+    padding: 12px 16px;
+    margin: 10px;
+    aspect-ratio: 1;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.tag {
+    text-decoration: none;
+    color: #999999;
+}
+
+.searchButton {
+    width: 25px;
+    height: 25px;
+    background-image: url('../public/searchicon-white.png');
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.header__searchInput {
+    display: inline-block;
+    width: 0;
+    margin-right: 20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    overflow: hidden;
+    opacity: 0;
+
+    transition: width 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.active {
+    width: 250px;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.message {
+    visibility: hidden;
+}
+
+.message__visible {
+    margin: 20px 0;
+    visibility: visible;
+}
+
+.textSearch {
+    width: 800px;
+    margin: 30px auto 0px;
+}
+
+.tracksTable {
+    margin: 20px auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tracksTable__track td {
+    font-size: 16px;
+    color: #222222;
+    padding: 10px;
+    border-bottom: 1px solid #777777;
+}
+
+.tracksTable__track:last-child td {
+    border-bottom: none;
+}
+
+.resetSearchButton {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('../public/close-button.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.searchInput {
+    width: 100%;
+    height: 40px;
+    background-image: url('../public/searchicon.png');
+    background-position: 6px 6px;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    padding: 6px 40px 6px 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #555;
+}
+
+.inputContainer {
+    position: relative;
+    width: 800px;
+    margin: 20px auto;
+}
+
+.track__listeners {
+    text-align: right;
+}
+
+.search__artist__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.li__mainText {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.container {
+    margin: 40px auto;
+    width: 800px;
+}
+
+.container_ul {
+    list-style: none;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container_li {
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: end; */
+    padding: 15px;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.container_li:has(.search__album__artistName:hover) .search__album__name {
+    text-decoration: none;
+}
+
+.moreLink {
+    width: 100%;
+    color: #005399;
+    font-size: 13px;
+    text-wrap: nowrap;
+    text-decoration: none;
+    display: flex;
+    justify-content: end;
+}
+
+.li__subtext {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 8px;
+}
+
+.search__track__image {
+    width: 40px;
+    aspect-ratio: 1;
+}
+
+.cell__image {
+    width: 60px;
+}
+
+.search__track__name {
+    font-weight: 700;
+    text-align: start;
+}
+
+.search__track__artistName {
+    text-align: center ;
+}
+
+.column__link:hover,
+.artist__image:hover+.artist__name,
+.artist__name:hover,
+.track__name:hover,
+.track__artistName:hover,
+.tag__card:hover,
+.tag:hover,
+.li__mainText:hover,
+.container_li:hover .li__mainText,
+.search__album__artistName:hover,
+.moreLink:hover,
+.search__track__name:hover,
+.search__track__artistName:hover {
+    text-decoration: underline;
+}
+
+.search__track__listeners {
+    text-align: right;
+}
+
+.search__track__link {
+    text-decoration: none;
+    color: #222222;
+}

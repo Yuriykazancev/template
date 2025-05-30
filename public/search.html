@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <!-- <script defer src="script.js"></script> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="search.css">
+  <script defer src="scriptSearch.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
-
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
+  <title>React App</title>
+</head>
+
+<body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 
-  <!-- <div class="app">
+  <!--<div class="app">
     <header class="header">
       <div class="header__logo">
         <a href="/" class="logo">Last.fm</a>
       </div>
       <div class="header__links">
-        
-        <input type="text" class="header__searchInput" placeholder="Search for music..." id="input" />
-        <button class="searchButton" ></button>
         <a href="https://www.last.fm/dashboard" class="link">Live</a>
         <a href="/" class="link">Music</a>
         <a href="https://www.last.fm/charts" class="link">Charts</a>
@@ -42,24 +38,37 @@
     </header>
 
     <main class="main">
-      <div id="result"></div>
-      
-        
-
-        <div class="main__container">
-          <div class="main__container__header">Hot right now</div>
-          <hr class="header__separator">
-          <ul class="artistsContainer">
-            
-          </ul>
+      <div class="mainContainer">
+        <h1 class="textSearch">Search result for</h1>
+        <div class="inputContainer">
+          <input type="text" class="searchInput" placeholder="Search for music..." id="input">
+          <button type="reset" class="resetSearchButton"></button>
         </div>
 
-        <div class="main__container">
-          <div class="main__container__header">Popular tracks</div>
-          <hr class="header__separator">
-          <ul class="tracksContainer">
-            
+        <div class="container artistsContainer">
+          <h2>Artists</h2>
+          <ul class="container_ul artistsContainer_ul"id="search__artistsContainer">
           </ul>
+          <p class="noArtistsMessage message">No artists found.</p>
+          <a class="moreLink artistsContainer__moreLink" href="">More artists ></a>
+        </div>
+
+        <div class="container albumsContainer">
+          <h2>Albums</h2>
+          <ul class="container_ul albumsContainer_ul" id="search__albumsContainer">
+          </ul>
+          <p class="noAlbumsMessage message">No albums found.</p>
+          <a class="moreLink albumsContainer__moreLink" href="">More albums ></a>
+        </div>
+
+        <div class="container tracksContainer">
+          <h2>Tracks</h2>
+          <table class="tracksTable">
+            <tbody class="tracksTable__body"></tbody>
+            </tbody>
+          </table>
+          <p class="noTracksMessage message">No tracks found.</p>
+          <a class="moreLink tracksContainer__moreLink" href="">More tracks ></a>
         </div>
       </div>
     </main>
@@ -111,4 +120,5 @@
     </footer>
   </div>
 </body>
+
 </html>
